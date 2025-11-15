@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hotstar Clone</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color:#2000d7;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Navbar */
+    .navbar {
+      background: linear-gradient(90deg, #6b00d7, #b300ff);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: #fff;
+    }
+    .navbar-nav .nav-link {
+      color: #fff !important;
+      margin-left: 15px;
+    }
+
+    /* Carousel */
+    .carousel-item {
+      position: relative;
+    }
+    .carousel-item img {
+      height: 550px;
+      width: 100%;
+      object-fit: cover;
+      filter: brightness(70%);
+    }
+    .carousel-caption {
+      position: absolute;
+      bottom: 20%;
+      left: 8%;
+      text-align: left;
+    }
+    .carousel-caption h2 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    }
+    .carousel-caption p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin-top: 10px;
+    }
+    .carousel-caption .btn {
+      background-color: #0004e6b9;
+      border: none;
+      padding: 10px 30px;
+      border-radius: 25px;
+      margin-top: 15px;
+      color: #fff;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+    .carousel-caption .btn:hover {
+      background-color: #003de6;
+      transform: scale(1.05);
+    }
+
+    /* Trending Movies */
+    .section-title {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+    .movie-card {
+      background-color: #070047;
+      border-radius: 15px;
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 15px;
+      transition: transform 0.3s ease;
+    }
+    .movie-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    .movie-card:hover {
+      transform: scale(1.05);
+    }
+    .movie-card h5 {
+      margin-top: 15px;
+      font-weight: 600;
+    }
+    .movie-card p {
+      font-size: 0.9rem;
+      color: #cfcfcf;
+      margin: 10px;
+    }
+    .movie-card .btn {
+      background-color: #ff00cc;
+      border: none;
+      border-radius: 25px;
+      font-size: 0.9rem;
+      padding: 8px 20px;
+    }
+
+    /* Categories */
+    .category-btn {
+      background: linear-gradient(90deg, #005dd7, #b300ff);
+      border: none;
+      border-radius: 30px;
+      padding: 12px 35px;
+      color: #fff;
+      font-weight: 600;
+      margin: 10px;
+      transition: 0.3s;
+    }
+    .category-btn:hover {
+      background: linear-gradient(90deg, #b300ff, #6b00d7);
+      transform: scale(1.05);
+    }
+
+    footer {
+      background-color: #1f0047;
+      text-align: center;
+      padding: 15px 0;
+      color: #aaa;
+      font-size: 0.9rem;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#">HOTSTAR 🔮</a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Shows</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Sports</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 🎥 Auto-Scrolling Poster Carousel -->
+  <div id="posterCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3500">
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="https://m.media-amazon.com/images/M/MV5BMTU2YjYwMjItMjA4Yy00OTY3LThkODMtNmZkOWU0YjU1NDFlXkEyXkFqcGc@.V1.jpg" alt="Sita Ramam">
+        <div class="carousel-caption">
+          <h2>Sita Ramam</h2>
+          <p>A soldier’s letter becomes a timeless love story.</p>
+          <button class="btn">Watch Now</button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="https://images.hindustantimes.com/img/2022/04/01/1600x900/RRR-Movie-Review_1648825470847_1648825479894.jpg" alt="RRR">
+        <div class="carousel-caption">
+          <h2>RRR</h2>
+          <p>Two heroes. One epic revolution.</p>
+          <button class="btn">Watch Now</button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="https://thefederal.com/file/2022/10/kanthara.jpg" alt="Kantara">
+        <div class="carousel-caption">
+          <h2>Kantara</h2>
+          <p>When faith and nature collide — the legend begins.</p>
+          <button class="btn">Watch Now</button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNUTFzbzEyHvBofI-FiL_Oao_GtAMv9iq0ng&s" alt="Pushpa">
+        <div class="carousel-caption">
+          <h2>Pushpa: The Rise</h2>
+          <p>The fire doesn’t bow down — it burns higher.</p>
+          <button class="btn">Watch Now</button>
+        </div>
+      </div>
+
+      <div class="carousel-item">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQH9oKfx2oIXT6OmlelXRieD0abLWvVdJCxvg&s" alt="Bahubali">
+        <div class="carousel-caption">
+          <h2>Bahubali</h2>
+          <p>The legend that redefined Indian cinema.</p>
+          <button class="btn">Watch Now</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Carousel Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#posterCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#posterCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- 🔥 Trending Movies -->
+  <section class="container my-5">
+    <h2 class="section-title">🔥 Trending Movies</h2>
+    <div class="row gy-4">
+      <div class="col-md-3">
+        <div class="movie-card">
+          <img src="https://e0.pxfuel.com/wallpapers/261/720/desktop-wallpaper-baahubali-the-beginning-2015-movie-bahubali.jpg" alt="Bahubali-1">
+          <h5>Bahubali-1</h5>
+          <p>A legendary tale of two brothers divided by destiny, Baahubali follows the rise of Shivudu as he uncovers his royal lineage and the epic secrets of Mahishmati.</p>
+          <button class="btn">Watch Now</button>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="movie-card">
+          <img src="https://m.media-amazon.com/images/M/MV5BMTU2YjYwMjItMjA4Yy00OTY3LThkODMtNmZkOWU0YjU1NDFlXkEyXkFqcGc@.V1.jpg" alt="Sitaramam">
+          <h5>Sitaramam</h5>
+          <p>A timeless romantic drama where an orphaned soldier and great woman are brought together by destiny by heartfelt letters, unfolding a love story.</p>
+          <button class="btn">Watch Now</button>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="movie-card">
+          <img src="https://www.telugubulletin.com/wp-content/uploads/2019/07/mumbai_10727560602019_06_25_07_03_54-696x392.jpg" alt="Oh Baby">
+          <h5>Oh Baby</h5>
+          <p>A heartwarming fantasy comedy where a 70-year-old woman magically turns 24 again and gets a second chance to rediscover life, love, and herself.</p>
+          <button class="btn">Watch Now</button>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="movie-card">
+          <img src="https://s.saregama.tech/image/c/m/1/4b/09/sakhi_albumart_1686135592.jpg" alt="Sakhi">
+          <h5>Sakhi</h5>
+          <p>Sakhi is a heartwarming tale of companionship, where a simple bond of friendship grows into a powerful force that transforms lives</p>
+          <button class="btn">Watch Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 🎭 Categories -->
+  <section class="text-center my-5">
+    <h2 class="section-title">🎭 Popular Categories</h2>
+    <button class="category-btn">Action</button>
+    <button class="category-btn">Comedy</button>
+    <button class="category-btn">Romance</button>
+    <button class="category-btn">Crime</button>
+    <button class="category-btn">Horror</button>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 Hotstar Clone | Created by kavya🎀
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
